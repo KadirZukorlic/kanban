@@ -10,6 +10,9 @@ type ColumnProps = {
 }
 
 const Column = ({ data, label, tasksNumber }: ColumnProps) => {
+
+	console.log(data)
+
 	return (
 		<div className="column">
 			<div className="columnHeader">
@@ -20,7 +23,7 @@ const Column = ({ data, label, tasksNumber }: ColumnProps) => {
 				<OptionsIcon />
 			</div>
 			{data.map(
-				({ title, startDate, dueDate, messages, subtasks, avatar, completed }: any) => (
+				({ title, startDate, dueDate, messages, subtasks, avatar, avatarGroup, completed }: any) => (
 					<Card
 						completed={completed}
 						title={title}
@@ -29,6 +32,7 @@ const Column = ({ data, label, tasksNumber }: ColumnProps) => {
 						messages={messages}
 						subtasks={subtasks}
 						avatar={avatar}
+						avatarGroup={avatarGroup}
 					/>
 				)
 			)}

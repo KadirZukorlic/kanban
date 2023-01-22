@@ -1,5 +1,7 @@
 import { MessagesIcon, SubtasksIcon } from '../Icons'
 import { Avatar } from './Avatar'
+import { AvatarGroup } from './AvatarGroup'
+import Label from './Label'
 import './styles.css'
 
 type CardProps = {
@@ -9,6 +11,7 @@ type CardProps = {
 	messages?: number
 	subtasks?: number
 	avatar: string
+	avatarGroup?: Array<string>
 	completed?: boolean
 }
 
@@ -19,13 +22,19 @@ export const Card = ({
 	messages,
 	subtasks,
 	avatar,
+	avatarGroup,
 	completed
 }: CardProps): JSX.Element => {
+	console.log(avatarGroup)
+
 	return (
-		<div className="card" style={{ backgroundColor: completed ? '#f3fffc': ''}}>
+		<div
+			className="card"
+			style={{ backgroundColor: completed ? '#f3fffc' : '' }}
+		>
 			<p className="cardTitle">{title}</p>
 			<div className="signifierGroup">
-				<div className="cardLabel" />
+				<Label />
 				<div className="dot" />
 				<div className="messages-subtasks">
 					<MessagesIcon /> {messages}
@@ -43,9 +52,10 @@ export const Card = ({
 				}}
 			>
 				<p className="startAndDueDate">
-					{startDate} - {dueDate}
+					{startDate} {dueDate ? '-' : ' '} {dueDate}
 				</p>
 				<Avatar avatar={avatar} />
+				{avatarGroup && <AvatarGroup avatarGroup={avatarGroup} />}
 			</div>
 		</div>
 	)
