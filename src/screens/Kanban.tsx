@@ -4,7 +4,9 @@ import Column from '../components/Column'
 
 const Kanban = () => {
 	return (
-		<div style={{ display: 'flex' }}>
+		<div
+			style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
+		>
 			<Column
 				data={DUMMY_DATA.toDo}
 				label="To Do"
@@ -29,6 +31,15 @@ const Kanban = () => {
 				data={DUMMY_DATA.completed}
 				label="Completed Tasks"
 				tasksNumber={DUMMY_DATA.completed.length}
+			/>
+			<div
+				style={{
+					width: '100%',
+					height: '12px',
+					backgroundColor: '#8E8E8E',
+					borderRadius: '8px',
+					marginTop: '24px'
+				}}
 			/>
 		</div>
 	)

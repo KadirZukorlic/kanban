@@ -25,8 +25,6 @@ export const Card = ({
 	avatarGroup,
 	completed
 }: CardProps): JSX.Element => {
-	console.log(avatarGroup)
-
 	return (
 		<div
 			className="card"
