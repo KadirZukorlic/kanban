@@ -8,14 +8,22 @@ type CardProps = {
 	dueDate?: string
 	messages?: number
 	subtasks?: number
+	avatar: string
+	completed?: boolean
 }
 
-export const Card = ({ title, startDate, dueDate, messages, subtasks }: CardProps) => {
+export const Card = ({
+	title,
+	startDate,
+	dueDate,
+	messages,
+	subtasks,
+	avatar,
+	completed
+}: CardProps): JSX.Element => {
 	return (
-		<div className="card">
-			<p className="cardTitle">
-				{title}
-			</p>
+		<div className="card" style={{ backgroundColor: completed ? '#f3fffc': ''}}>
+			<p className="cardTitle">{title}</p>
 			<div className="signifierGroup">
 				<div className="cardLabel" />
 				<div className="dot" />
@@ -34,8 +42,10 @@ export const Card = ({ title, startDate, dueDate, messages, subtasks }: CardProp
 					justifyContent: 'space-between'
 				}}
 			>
-				<p className="startAndDueDate">{startDate} - {dueDate}</p>
-				<Avatar />
+				<p className="startAndDueDate">
+					{startDate} - {dueDate}
+				</p>
+				<Avatar avatar={avatar} />
 			</div>
 		</div>
 	)

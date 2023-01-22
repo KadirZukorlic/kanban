@@ -19,15 +19,19 @@ const Column = ({ data, label, tasksNumber }: ColumnProps) => {
 				</div>
 				<OptionsIcon />
 			</div>
-			{data.map(({ title, startDate, dueDate, messages, subtasks }: any) => (
-				<Card
-					title={title}
-					startDate={startDate}
-					dueDate={dueDate}
-					messages={messages}
-					subtasks={subtasks}
-				/>
-			))}
+			{data.map(
+				({ title, startDate, dueDate, messages, subtasks, avatar, completed }: any) => (
+					<Card
+						completed={completed}
+						title={title}
+						startDate={startDate}
+						dueDate={dueDate}
+						messages={messages}
+						subtasks={subtasks}
+						avatar={avatar}
+					/>
+				)
+			)}
 			<button className="btn">+ Add a Task</button>
 		</div>
 	)
