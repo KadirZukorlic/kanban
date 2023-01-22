@@ -1,0 +1,63 @@
+.card {
+	background-color: white;
+	width: 260px;
+	border-radius: 6px;
+	box-shadow: 0 2px 7px -2px rgba(0, 0, 0, 0.2);
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-bottom: 4px;
+}
+
+.cardTitle {
+	font-size: 14px;
+	font-family: 'SF Pro Display';
+	letter-spacing: 0.3px;
+	line-height: 18px;
+}
+
+.signifierGroup {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.dot {
+	width: 2px;
+	height: 2px;
+	background-color: #a3a3a3;
+}
+
+.messages-subtasks {
+	color: #8e8e8e;
+	font-family: 'SF Pro Display';
+	font-size: 12px;
+	letter-spacing: 0;
+	line-height: 14px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.cardLabel {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: #4b9ae5;
+}
+
+.startAndDueDate {
+	color: #373737;
+	font-family: 'SF Pro Display';
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: 15px;
+}
+
+.avatar {
+	border-radius: 50%;
+	object-fit: cover;
+	width: 24px;
+	height: 24px;
+}
